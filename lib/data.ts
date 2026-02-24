@@ -125,6 +125,6 @@ export const testimonials = [
     name: "Julie Martin",
     location: "Etterbeek, Bruxelles",
     amount: "1 800€/an",
-    text: "Je ne savais même pas que mon loyer était illégal. Grâce à RentCheck, j'ai pu faire baisser mon loyer de 150€ par mois à Etterbeek.",
+    text: "Je ne savais même pas que mon loyer était illégal. Grâce à Loyer Légal, j'ai pu faire baisser mon loyer de 150€ par mois à Etterbeek.",
   },
 ];

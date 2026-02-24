@@ -66,7 +66,7 @@ export async function generateMetadata({
   const article = articles[slug];
   if (!article) return { title: "Article non trouvé" };
   return {
-    title: `${article.title} - RentCheck Blog`,
+    title: `${article.title} - Loyer Légal Blog`,
     description: article.content.slice(0, 160).replace(/<[^>]*>/g, ""),
   };
 }
@@ -119,7 +119,7 @@ export default async function ArticlePage({
           <div className="mt-12 pt-8 border-t border-slate-200">
             <ShareButtons
               title={article.title}
-              text={`J'ai lu cet article sur RentCheck : ${article.title}`}
+              text={`J'ai lu cet article sur Loyer Légal : ${article.title}`}
             />
           </div>
         </div>

@@ -18,7 +18,7 @@ export function Hero() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Left column */}
             <div className="text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm border border-indigo-100 rounded-full mb-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm border border-emerald-100 rounded-full mb-8">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -29,7 +29,7 @@ export function Hero() {
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="w-4 h-4 text-indigo-600"
+                  className="w-4 h-4 text-emerald-600"
                 >
                   <line x1="3" x2="21" y1="22" y2="22" />
                   <line x1="6" x2="6" y1="18" y2="11" />
@@ -38,14 +38,14 @@ export function Hero() {
                   <line x1="18" x2="18" y1="18" y2="11" />
                   <polygon points="12 2 20 7 4 7" />
                 </svg>
-                <span className="text-indigo-700 font-medium text-sm">
+                <span className="text-emerald-700 font-medium text-sm">
                   Bruxelles-Capitale
                 </span>
               </div>
 
               <h1 className="text-5xl lg:text-7xl font-black text-slate-900 leading-[1.1] mb-8">
                 Votre loyer à{" "}
-                <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
                   Bruxelles
                 </span>{" "}
                 est-il illégal ?
@@ -68,7 +68,7 @@ export function Hero() {
 
               <div className="flex flex-wrap justify-center lg:justify-start gap-8">
                 <div className="text-center">
-                  <div className="text-3xl lg:text-4xl font-black text-indigo-600">
+                  <div className="text-3xl lg:text-4xl font-black text-emerald-600">
                     {stats.analyzedRentals.toLocaleString()}
                   </div>
                   <div className="text-slate-500 font-medium text-sm mt-1">
@@ -96,12 +96,12 @@ export function Hero() {
 
             {/* Right column - Card preview */}
             <div className="relative">
-              <div className="relative bg-gradient-to-br from-indigo-500 to-purple-600 rounded-3xl p-1 shadow-2xl shadow-indigo-500/30">
+              <div className="relative bg-gradient-to-br from-emerald-500 to-teal-600 rounded-3xl p-1 shadow-2xl shadow-emerald-500/30">
                 <div className="bg-white rounded-3xl p-8">
                   <div className="bg-slate-50 rounded-2xl p-6 mb-6">
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
-                        <MapPin className="w-5 h-5 text-indigo-600" />
+                      <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
+                        <MapPin className="w-5 h-5 text-emerald-600" />
                       </div>
                       <div>
                         <p className="text-sm text-slate-500">Ville</p>
@@ -109,8 +109,8 @@ export function Hero() {
                       </div>
                     </div>
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
-                        <Building2 className="w-5 h-5 text-indigo-600" />
+                      <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
+                        <Building2 className="w-5 h-5 text-emerald-600" />
                       </div>
                       <div>
                         <p className="text-sm text-slate-500">Surface</p>
@@ -118,8 +118,8 @@ export function Hero() {
                       </div>
                     </div>
                     <div className="flex items-center gap-3 mb-6">
-                      <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
-                        <Zap className="w-5 h-5 text-indigo-600" />
+                      <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
+                        <Zap className="w-5 h-5 text-emerald-600" />
                       </div>
                       <div>
                         <p className="text-sm text-slate-500">Certificat PEB</p>
@@ -127,7 +127,7 @@ export function Hero() {
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center">
+                      <div className="w-10 h-10 bg-emerald-100 rounded-lg flex items-center justify-center">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -138,7 +138,7 @@ export function Hero() {
                           strokeWidth="2"
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          className="w-5 h-5 text-indigo-600"
+                          className="w-5 h-5 text-emerald-600"
                         >
                           <circle cx="12" cy="12" r="10" />
                           <polyline points="12 6 12 12 16 14" />

@@ -31,7 +31,7 @@ export function HowItWorks() {
     <section id="comment" className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 bg-indigo-50 text-indigo-700 font-medium rounded-full text-sm mb-4">
+          <span className="inline-block px-4 py-2 bg-emerald-50 text-emerald-700 font-medium rounded-full text-sm mb-4">
             COMMENT ÇA MARCHE
           </span>
           <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-4">
@@ -49,7 +49,7 @@ export function HowItWorks() {
               key={step.number}
               className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow"
             >
-              <div className="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mb-6">
+              <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-6">
                 <step.icon className="w-7 h-7 text-white" />
               </div>
               <span className="text-5xl font-black text-slate-100">

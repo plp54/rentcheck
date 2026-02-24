@@ -23,12 +23,12 @@ export async function generateMetadata({ params }: CityPageProps) {
 
   if (!city) {
     return {
-      title: "Ville non trouvée - RentCheck",
+      title: "Ville non trouvée - Loyer Légal",
     };
   }
 
   return {
-    title: `Vérifier mon loyer à ${city.name} - RentCheck`,
+    title: `Vérifier mon loyer à ${city.name} - Loyer Légal`,
     description: `Vérifiez gratuitement si votre loyer à ${city.name} est illégal selon le Code du Logement. Prix de référence : ${city.referencePrice}€/m².`,
   };
 }
@@ -48,15 +48,15 @@ export default async function CityPage({ params }: CityPageProps) {
       <section className="pt-32 pb-12">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 border border-indigo-100 rounded-full mb-6">
-              <Landmark className="w-4 h-4 text-indigo-600" />
-              <span className="text-indigo-700 font-medium text-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 border border-emerald-100 rounded-full mb-6">
+              <Landmark className="w-4 h-4 text-emerald-600" />
+              <span className="text-emerald-700 font-medium text-sm">
                 {city.region}
               </span>
             </div>
             <h1 className="text-4xl lg:text-5xl font-black text-slate-900 mb-4">
               Vérifiez votre loyer à{" "}
-              <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
                 {city.name}
               </span>
             </h1>

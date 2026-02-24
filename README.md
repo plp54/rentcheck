@@ -1,4 +1,4 @@
-# RentCheck.be
+# Loyer Légal.be
 
 Application Next.js pour vérifier si un loyer est illégal selon le Code du Logement belge.
 

@@ -290,7 +290,7 @@ export function RentCalculator({ city }: RentCalculatorProps) {
             id="peb"
             value={peb}
             onChange={(e) => setPeb(e.target.value)}
-            className="w-full mt-2 px-3 py-2 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full mt-2 px-3 py-2 border border-slate-200 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-500"
           >
             <option value="">Sélectionnez votre PEB</option>
             {pebCoefficients.map((p) => (

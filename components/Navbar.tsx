@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Landmark } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 export function Navbar() {
@@ -10,8 +10,15 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center gap-3 group">
-            <span className="font-black text-2xl text-slate-900 tracking-tight">
-              RentCheck
+            <Image
+              src="/logo.webp"
+              alt="Loyer Légal"
+              width={40}
+              height={40}
+              className="rounded-lg"
+            />
+            <span className="font-black text-xl text-slate-900 tracking-tight">
+              Loyer<span className="text-emerald-600">Légal</span>.be
             </span>
           </Link>
           <div className="hidden md:flex items-center gap-8">
@@ -28,7 +35,7 @@ export function Navbar() {
               Témoignages
             </Link>
             <Link href="/bruxelles">
-              <Button className="px-6 py-3 bg-slate-900 text-white font-semibold rounded-full hover:bg-slate-800 transition shadow-lg shadow-slate-900/20 hover:shadow-slate-900/30">
+              <Button className="px-6 py-3 bg-emerald-600 text-white font-semibold rounded-full hover:bg-emerald-700 transition shadow-lg shadow-emerald-600/20 hover:shadow-emerald-600/30">
                 Vérifier mon loyer
               </Button>
             </Link>
@@ -45,8 +52,15 @@ export function NavbarFixed() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center gap-3 group">
-            <span className="font-black text-2xl text-slate-900 tracking-tight">
-              RentCheck
+            <Image
+              src="/logo.webp"
+              alt="Loyer Légal"
+              width={36}
+              height={36}
+              className="rounded-lg"
+            />
+            <span className="font-black text-xl text-slate-900 tracking-tight">
+              Loyer<span className="text-emerald-600">Légal</span>.be
             </span>
           </Link>
           <Link

@@ -52,7 +52,7 @@ export async function POST(request: NextRequest) {
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Rapport RentCheck - Analyse Loyer</title>
+  <title>Rapport Loyer Légal - Analyse Loyer</title>
   <style>
     body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 40px; }
     h1 { color: #4f46e5; border-bottom: 3px solid #4f46e5; padding-bottom: 10px; }
@@ -73,7 +73,7 @@ export async function POST(request: NextRequest) {
 </head>
 <body>
   <div class="header">
-    <div class="logo">RentCheck</div>
+    <div class="logo">Loyer Légal</div>
     <p>Rapport d'analyse de loyer - ${currentDate}</p>
   </div>
 
@@ -136,7 +136,7 @@ export async function POST(request: NextRequest) {
   </div>
 
   <div class="footer">
-    <p>Ce rapport a été généré par RentCheck.be</p>
+    <p>Ce rapport a été généré par Loyer Légal.be</p>
     <p>Les calculs sont basés sur les données officielles du SPF Finances.</p>
     <p>Ce document est fourni à titre informatif et ne constitue pas un avis juridique.</p>
   </div>

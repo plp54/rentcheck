@@ -113,4 +113,4 @@ Le prix du rapport est configuré directement dans le code (0,50€ = 50 cents).
 
 En cas de problème :
 - GitHub Issues: https://github.com/plp54/rentcheck/issues
-- Email: contact@rentcheck.be
+- Email: contact@loyerlegal.be

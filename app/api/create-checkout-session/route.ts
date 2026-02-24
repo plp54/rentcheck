@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
           price_data: {
             currency: "eur",
             product_data: {
-              name: "Rapport RentCheck - Analyse loyer illégal",
+              name: "Rapport Loyer Légal - Analyse loyer illégal",
               description: `Rapport PDF complet pour ${city} - ${surface}m²`,
             },
             unit_amount: 50, // 0.50€ in cents

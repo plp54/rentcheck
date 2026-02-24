@@ -64,7 +64,7 @@ const faqs = [
 ];
 
 export const metadata = {
-  title: "FAQ - RentCheck",
+  title: "FAQ - Loyer Légal",
   description:
     "Questions fréquentes sur la vérification des loyers illégaux en Belgique. Comment calculer son loyer maximum légal ? Que faire si on surpaye ?",
 };
@@ -77,9 +77,9 @@ export default function FAQPage() {
       <section className="pt-32 pb-12">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 border border-indigo-100 rounded-full mb-6">
-              <HelpCircle className="w-4 h-4 text-indigo-600" />
-              <span className="text-indigo-700 font-medium text-sm">FAQ</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 border border-emerald-100 rounded-full mb-6">
+              <HelpCircle className="w-4 h-4 text-emerald-600" />
+              <span className="text-emerald-700 font-medium text-sm">FAQ</span>
             </div>
             <h1 className="text-4xl lg:text-5xl font-black text-slate-900 mb-4">
               Questions fréquentes
@@ -106,18 +106,18 @@ export default function FAQPage() {
             ))}
           </Accordion>
 
-          <div className="mt-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl p-8 text-center text-white">
+          <div className="mt-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl p-8 text-center text-white">
             <MessageCircle className="w-12 h-12 mx-auto mb-4 opacity-80" />
             <h2 className="text-2xl font-bold mb-2">
               Vous avez d&apos;autres questions ?
             </h2>
-            <p className="text-indigo-100 mb-6">
+            <p className="text-emerald-100 mb-6">
               Notre équipe est là pour vous aider avec votre démarche.
             </p>
-            <Link href="mailto:contact@rentcheck.be">
+            <Link href="mailto:contact@loyerlegal.be">
               <Button
                 variant="secondary"
-                className="bg-white text-indigo-600 hover:bg-indigo-50"
+                className="bg-white text-emerald-600 hover:bg-emerald-50"
               >
                 Nous contacter
               </Button>

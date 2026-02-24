@@ -11,13 +11,13 @@ interface ShareButtonsProps {
 }
 
 export function ShareButtons({
-  title = "RentCheck",
+  title = "Loyer Légal",
   text = "J'ai découvert que je payais trop cher mon loyer ! Vérifiez le vôtre gratuitement.",
   url: initialUrl,
 }: ShareButtonsProps) {
   const [copied, setCopied] = useState(false);
   const [canShare, setCanShare] = useState(false);
-  const [currentUrl, setCurrentUrl] = useState("https://rentcheck.be");
+  const [currentUrl, setCurrentUrl] = useState("https://loyerlegal.be");
 
   useEffect(() => {
     if (typeof window !== "undefined") {

@@ -24,7 +24,7 @@ export async function onRequestPost(context: any) {
       body: new URLSearchParams({
         "payment_method_types[0]": "card",
         "line_items[0][price_data][currency]": "eur",
-        "line_items[0][price_data][product_data][name]": "Rapport RentCheck - Analyse loyer illégal",
+        "line_items[0][price_data][product_data][name]": "Rapport Loyer Légal - Analyse loyer illégal",
         "line_items[0][price_data][product_data][description]": `Rapport PDF complet pour ${city} - ${surface}m²`,
         "line_items[0][price_data][unit_amount]": "50",
         "line_items[0][quantity]": "1",

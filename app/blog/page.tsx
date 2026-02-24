@@ -56,7 +56,7 @@ const articles = [
 ];
 
 export const metadata = {
-  title: "Blog - RentCheck",
+  title: "Blog - Loyer Légal",
   description:
     "Conseils et guides sur les loyers illégaux en Belgique. Découvrez vos droits en tant que locataire.",
 };
@@ -69,9 +69,9 @@ export default function BlogPage() {
       <section className="pt-32 pb-12">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 border border-indigo-100 rounded-full mb-6">
-              <BookOpen className="w-4 h-4 text-indigo-600" />
-              <span className="text-indigo-700 font-medium text-sm">Blog</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 border border-emerald-100 rounded-full mb-6">
+              <BookOpen className="w-4 h-4 text-emerald-600" />
+              <span className="text-emerald-700 font-medium text-sm">Blog</span>
             </div>
             <h1 className="text-4xl lg:text-5xl font-black text-slate-900 mb-4">
               Guides et conseils
@@ -88,7 +88,7 @@ export default function BlogPage() {
                 <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer group">
                   <CardHeader>
                     <div className="flex items-center gap-2 mb-3">
-                      <span className="px-3 py-1 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">
+                      <span className="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-medium rounded-full">
                         {article.category}
                       </span>
                       <span className="flex items-center gap-1 text-xs text-slate-500">
@@ -96,7 +96,7 @@ export default function BlogPage() {
                         {article.readTime}
                       </span>
                     </div>
-                    <CardTitle className="group-hover:text-indigo-600 transition-colors">
+                    <CardTitle className="group-hover:text-emerald-600 transition-colors">
                       {article.title}
                     </CardTitle>
                   </CardHeader>
@@ -104,7 +104,7 @@ export default function BlogPage() {
                     <p className="text-slate-600 text-sm leading-relaxed mb-4">
                       {article.excerpt}
                     </p>
-                    <span className="inline-flex items-center gap-1 text-indigo-600 font-medium text-sm group-hover:gap-2 transition-all">
+                    <span className="inline-flex items-center gap-1 text-emerald-600 font-medium text-sm group-hover:gap-2 transition-all">
                       Lire l&apos;article
                       <ArrowRight className="w-4 h-4" />
                     </span>

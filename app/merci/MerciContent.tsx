@@ -59,7 +59,7 @@ export function MerciContent() {
 
       {loading ? (
         <div className="py-8">
-          <Loader2 className="w-8 h-8 animate-spin text-indigo-600 mx-auto mb-4" />
+          <Loader2 className="w-8 h-8 animate-spin text-emerald-600 mx-auto mb-4" />
           <p className="text-slate-600">
             Génération de votre rapport en cours...
           </p>

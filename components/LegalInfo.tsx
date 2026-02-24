@@ -8,7 +8,7 @@ export function LegalInfo() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <span className="inline-block px-4 py-2 bg-indigo-50 text-indigo-700 font-medium rounded-full text-sm mb-4">
+            <span className="inline-block px-4 py-2 bg-emerald-50 text-emerald-700 font-medium rounded-full text-sm mb-4">
               SÉCURITÉ JURIDIQUE
             </span>
             <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-6">
@@ -77,18 +77,18 @@ export function LegalInfo() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl p-8 text-white">
+            <div className="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl p-8 text-white">
               <h3 className="text-xl font-bold mb-4">Rapport PDF</h3>
-              <p className="text-indigo-100 mb-4">4 pages complètes</p>
-              <ol className="space-y-2 text-indigo-100">
+              <p className="text-emerald-100 mb-4">4 pages complètes</p>
+              <ol className="space-y-2 text-emerald-100">
                 <li>1. Analyse détaillée du calcul</li>
                 <li>2. Cadre juridique complet</li>
                 <li>3. Lettre de mise en demeure type</li>
                 <li>4. Guide des démarches</li>
               </ol>
-              <div className="mt-6 pt-6 border-t border-indigo-400/30">
+              <div className="mt-6 pt-6 border-t border-emerald-400/30">
                 <span className="text-3xl font-black">0,50€</span>
-                <span className="text-indigo-200 ml-2">Prix du rapport</span>
+                <span className="text-emerald-200 ml-2">Prix du rapport</span>
               </div>
             </div>
           </div>

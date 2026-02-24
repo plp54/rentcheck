@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
@@ -10,7 +11,6 @@ export function Footer() {
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Connect to newsletter service
     alert("Merci pour votre inscription !");
     setEmail("");
   };
@@ -20,7 +20,18 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
-            <h3 className="text-white font-black text-xl mb-4">RentCheck</h3>
+            <div className="flex items-center gap-2 mb-4">
+              <Image
+                src="/logo.webp"
+                alt="Loyer Légal"
+                width={32}
+                height={32}
+                className="rounded"
+              />
+              <h3 className="text-white font-black text-xl">
+                Loyer<span className="text-emerald-500">Légal</span>.be
+              </h3>
+            </div>
             <p className="text-sm text-slate-400 mb-4">
               Vérifiez si votre loyer est illégal et récupérez votre argent.
               Service conforme au Code du Logement belge.
@@ -113,7 +124,7 @@ export function Footer() {
               />
               <Button
                 type="submit"
-                className="w-full bg-indigo-600 hover:bg-indigo-700"
+                className="w-full bg-emerald-600 hover:bg-emerald-700"
               >
                 S&apos;inscrire
               </Button>
@@ -123,7 +134,7 @@ export function Footer() {
 
         <div className="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-sm text-slate-500">
-            © {new Date().getFullYear()} RentCheck.be - Tous droits réservés
+            © {new Date().getFullYear()} LoyerLegal.be - Tous droits réservés
           </div>
           <div className="flex items-center gap-6 text-sm">
             <Link
@@ -139,7 +150,7 @@ export function Footer() {
               Conditions
             </Link>
             <Link
-              href="mailto:contact@rentcheck.be"
+              href="mailto:contact@loyerlegal.be"
               className="text-slate-500 hover:text-white transition"
             >
               Contact
