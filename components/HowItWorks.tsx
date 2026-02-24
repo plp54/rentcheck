@@ -1,6 +1,6 @@
 "use client";
 
-import { Calculator, FileSearch, Sparkles, ArrowRight } from "lucide-react";
+import { Calculator, FileSearch, Award, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
@@ -9,64 +9,77 @@ const steps = [
     number: "01",
     title: "Calculez votre loyer légal",
     description:
-      "Entrez les infos de votre logement. Notre algorithme compare instantanément votre loyer au maximum légal selon le Code du Logement bruxellois.",
+      "Entrez les informations de votre logement. Notre algorithme certifié compare instantanément votre loyer au maximum légal.",
     icon: Calculator,
-    benefit: "Gratuit et sans engagement",
+    time: "30 secondes",
   },
   {
     number: "02",
-    title: "Découvrez si vous surpayez",
+    title: "Découvrez votre surpaye",
     description:
-      "Obtenez immédiatement le montant exact de votre surpaye mensuelle et annuelle. 35% des locataires découvrent qu'ils paient trop cher !",
+      "Obtenez le montant exact de votre surpaye mensuelle et annuelle. 35% des locataires découvrent qu'ils paient trop cher.",
     icon: FileSearch,
-    benefit: "Résultat en 30 secondes",
+    time: "Résultat immédiat",
   },
   {
     number: "03",
     title: "Récupérez votre argent",
     description:
-      "Téléchargez votre rapport juridique complet avec lettre de mise en demeure. Vous pouvez réclamer jusqu'à 12 mois de trop-perçu !",
-    icon: Sparkles,
-    benefit: "Moyenne : 2 160€ récupérés",
+      "Téléchargez votre rapport juridique complet. Vous pouvez réclamer jusqu'à 12 mois de trop-perçu d'un seul coup.",
+    icon: Award,
+    time: "Moyenne : 2 160€",
   },
 ];
 
 export function HowItWorks() {
   return (
-    <section id="comment" className="py-24 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="comment" className="py-24 bg-white relative overflow-hidden">
+      {/* Subtle background */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-blue-50/30 via-transparent to-transparent" />
+      
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 bg-emerald-100 text-emerald-800 font-bold rounded-full text-sm mb-4">
-            COMMENT RÉCUPÉRER VOTRE ARGENT
-          </span>
-          <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-4">
-            3 étapes pour faire baisser votre loyer
+          <span className="caption-apple mb-4 block">COMMENT ÇA MARCHE</span>
+          <h2 className="section-title text-[#1D1D1F] mb-4">
+            Récupérez votre argent en 3 étapes
           </h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-            Des milliers de locataires ont déjà récupéré en moyenne <strong className="text-emerald-600">2 160€</strong> par an
+          <p className="text-xl text-[#86868B] max-w-2xl mx-auto">
+            Notre processus est conçu pour être rapide, simple et efficace.
+            <strong className="text-[#1D1D1F]"> Zéro risque, tout à gagner.</strong>
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
-          {steps.map((step) => (
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          {steps.map((step, index) => (
             <div
               key={step.number}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 border border-slate-100"
+              className="group relative"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-emerald-500/25">
-                <step.icon className="w-8 h-8 text-white" />
-              </div>
-              <span className="text-6xl font-black text-slate-100 absolute top-6 right-6">
-                {step.number}
-              </span>
-              <div className="relative">
-                <span className="inline-block px-3 py-1 bg-orange-100 text-orange-700 text-xs font-bold rounded-full mb-3">
-                  {step.benefit}
+              {/* Connector line */}
+              {index < steps.length - 1 && (
+                <div className="hidden md:block absolute top-16 left-[60%] w-[80%] h-[2px] bg-gradient-to-r from-[#007AFF]/20 to-transparent" />
+              )}
+              
+              <div className="relative bg-[#F5F5F7] rounded-3xl p-8 border border-transparent hover:border-[#007AFF]/20 transition-all duration-500 hover:shadow-lg hover:shadow-[#007AFF]/5 hover:-translate-y-1">
+                {/* Step number */}
+                <span className="absolute -top-4 -right-4 text-8xl font-bold text-[#007AFF]/5 select-none">
+                  {step.number}
                 </span>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">
+                
+                {/* Icon */}
+                <div className="relative w-16 h-16 bg-gradient-to-br from-[#007AFF] to-[#5AC8FA] rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-[#007AFF]/25 group-hover:scale-110 transition-transform duration-500">
+                  <step.icon className="w-8 h-8 text-white" />
+                </div>
+                
+                {/* Time badge */}
+                <span className="inline-block px-3 py-1 bg-[#007AFF]/10 text-[#007AFF] text-xs font-semibold rounded-full mb-4">
+                  {step.time}
+                </span>
+                
+                <h3 className="text-xl font-semibold text-[#1D1D1F] mb-3">
                   {step.title}
                 </h3>
-                <p className="text-slate-600 leading-relaxed">
+                <p className="text-[#86868B] leading-relaxed">
                   {step.description}
                 </p>
               </div>
@@ -74,15 +87,16 @@ export function HowItWorks() {
           ))}
         </div>
 
+        {/* CTA Section */}
         <div className="text-center">
           <Link href="/bruxelles">
-            <Button className="group inline-flex items-center justify-center gap-3 px-10 py-7 bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold rounded-full hover:from-orange-600 hover:to-orange-700 transition-all shadow-xl shadow-orange-500/30 hover:shadow-orange-500/50 hover:scale-105 text-lg">
-              Vérifier si je surpaye
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition" />
+            <Button className="group inline-flex items-center justify-center gap-3 px-10 py-7 bg-[#007AFF] hover:bg-[#0071E3] text-white font-semibold rounded-full transition-all shadow-lg shadow-[#007AFF]/25 hover:shadow-xl hover:shadow-[#007AFF]/30 hover:scale-[1.02] text-lg h-auto">
+              Vérifier mon loyer gratuitement
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </Link>
-          <p className="text-slate-500 text-sm mt-4">
-            ⚡ Analyse gratuite · Sans engagement · Résultat immédiat
+          <p className="text-[#86868B] text-sm mt-4">
+            Analyse gratuite · Sans engagement · Données sécurisées
           </p>
         </div>
       </div>
