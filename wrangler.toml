@@ -1,0 +1,8 @@
+name = "rentcheck"
+compatibility_date = "2024-01-01"
+
+[env.production]
+vars = { NEXT_PUBLIC_URL = "https://production.rentcheck.pages.dev" }
+
+# Secrets à configurer via wrangler secret put
+# STRIPE_SECRET_KEY

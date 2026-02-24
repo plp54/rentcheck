@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RentCheck.be
 
-## Getting Started
+Application Next.js pour vérifier si un loyer est illégal selon le Code du Logement belge.
 
-First, run the development server:
+## Fonctionnalités
+
+- ✅ Calcul du loyer maximum légal selon la ville
+- ✅ Coefficients PEB (Performance Énergétique des Bâtiments)
+- ✅ Coefficient ancienneté
+- ✅ Paiement Stripe (0,50€ pour le rapport PDF)
+- ✅ Génération de PDF avec lettre de mise en demeure
+- ✅ Multi-villes (Bruxelles, Anvers, Liège)
+
+## Régions supportées
+
+| Ville | Prix de référence | Législation |
+|-------|------------------|-------------|
+| Bruxelles | 15,80€/m² | Arrêté royal du 22 décembre 2023 |
+| Anvers | 13,50€/m² | Code flamand du logement |
+| Liège | 12,50€/m² | Code wallon du logement |
+
+## Stack technique
+
+- **Framework**: Next.js 15 avec App Router
+- **Styling**: Tailwind CSS + shadcn/ui
+- **Paiement**: Stripe Checkout
+- **PDF**: HTML-to-PDF (côté serveur)
+- **Déploiement**: Cloudflare Pages
+
+## Installation
 
 ```bash
+# Cloner le repo
+git clone https://github.com/votre-username/rentcheck.git
+cd rentcheck
+
+# Installer les dépendances
+npm install
+
+# Configurer les variables d'environnement
+cp .env.example .env.local
+# Éditer .env.local avec vos clés Stripe
+
+# Lancer en dev
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Déploiement
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Cloudflare Pages
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Build
+npm run build
 
-## Learn More
+# Déployer (via wrangler ou interface web)
+npx wrangler pages deploy dist
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npx vercel --prod
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Structure du projet
 
-## Deploy on Vercel
+```
+app/
+├── page.tsx              # Landing page
+├── [city]/page.tsx       # Page formulaire par ville
+├── merci/page.tsx        # Page confirmation paiement
+└── api/
+    ├── create-checkout-session/  # API Stripe
+    └── generate-pdf/             # API génération PDF
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+components/
+├── Navbar.tsx
+├── Hero.tsx
+├── HowItWorks.tsx
+├── LegalInfo.tsx
+├── Testimonials.tsx
+├── CTA.tsx
+├── Footer.tsx
+└── RentCalculator.tsx    # Formulaire principal
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+lib/
+├── data.ts               # Données villes/coefficients
+└── utils.ts
+```
+
+## Calcul du loyer
+
+La formule utilisée est :
+
+```
+Loyer max = Surface × Prix de référence × Coefficient PEB × Coefficient ancienneté
+```
+
+### Coefficients PEB
+
+| Label | Coefficient |
+|-------|-------------|
+| A+ | 1.15 |
+| A | 1.10 |
+| B | 1.05 |
+| C | 0.95 |
+| D | 0.90 |
+| E | 0.85 |
+| F | 0.80 |
+
+### Coefficients ancienneté
+
+| Âge | Coefficient |
+|-----|-------------|
+| < 5 ans | 1.00 |
+| 5-10 ans | 0.95 |
+| 10-15 ans | 0.92 |
+| 15-20 ans | 0.90 |
+| 20-25 ans | 0.88 |
+| > 25 ans | 0.85 |
+
+## Licence
+
+MIT
