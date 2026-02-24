@@ -123,3 +123,4 @@ Loyer max = Surface × Prix de référence × Coefficient PEB × Coefficient anc
 ## Licence
 
 MIT
+# Deploy mar. 24 févr. 2026 22:07:04 CET

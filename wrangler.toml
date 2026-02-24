@@ -4,6 +4,3 @@ pages_build_output_dir = "dist"
 
 [env.production]
 vars = { NEXT_PUBLIC_URL = "https://loyerlegal.be" }
-
-# Custom domain: loyerlegal.be
-# Configure in Cloudflare Dashboard > Pages > rentcheck > Custom domains
