@@ -6,9 +6,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  // Pour supporter les routes API avec export static
-  // Les API routes ne fonctionneront qu'en mode serveur
-  // Pour Cloudflare Pages, il faudra utiliser des Functions
+  // Configuration pour Cloudflare Pages
+  trailingSlash: true,
 };
 
 export default nextConfig;
