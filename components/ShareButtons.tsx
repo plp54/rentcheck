@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Share2, Twitter, Facebook, Linkedin, Link2, Check } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface ShareButtonsProps {
   title?: string;
@@ -13,14 +13,23 @@ interface ShareButtonsProps {
 export function ShareButtons({
   title = "RentCheck",
   text = "J'ai découvert que je payais trop cher mon loyer ! Vérifiez le vôtre gratuitement.",
-  url = typeof window !== "undefined" ? window.location.href : "https://rentcheck.be",
+  url: initialUrl,
 }: ShareButtonsProps) {
   const [copied, setCopied] = useState(false);
+  const [canShare, setCanShare] = useState(false);
+  const [currentUrl, setCurrentUrl] = useState("https://rentcheck.be");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setCurrentUrl(initialUrl || window.location.href);
+      setCanShare(!!navigator.share);
+    }
+  }, [initialUrl]);
 
   const shareData = {
     title,
     text,
-    url,
+    url: currentUrl,
   };
 
   const handleNativeShare = async () => {
@@ -34,26 +43,26 @@ export function ShareButtons({
   };
 
   const handleCopyLink = () => {
-    navigator.clipboard.writeText(url);
+    navigator.clipboard.writeText(currentUrl);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
   const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
     text
-  )}&url=${encodeURIComponent(url)}`;
+  )}&url=${encodeURIComponent(currentUrl)}`;
   const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
-    url
+    currentUrl
   )}`;
   const linkedinUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(
-    url
+    currentUrl
   )}`;
 
   return (
     <div className="flex flex-wrap items-center gap-2">
       <span className="text-sm text-slate-500 mr-2">Partager :</span>
 
-      {typeof navigator !== "undefined" && navigator.share && (
+      {canShare && (
         <Button
           variant="outline"
           size="sm"
