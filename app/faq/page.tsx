@@ -44,7 +44,7 @@ const faqs = [
   {
     question: "Combien de temps prend l'analyse ?",
     answer:
-      "L'analyse en ligne est instantanée. Vous obtenez immédiatement le résultat. Le rapport PDF est généré en quelques secondes après le paiement de 0,50€.",
+      "L'analyse en ligne est instantanée. Vous obtenez immédiatement le résultat. Le rapport PDF est généré en quelques secondes après le paiement de 14,99€.",
   },
   {
     question: "Mes données sont-elles protégées ?",

@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
               name: "Rapport Loyer Légal - Analyse loyer illégal",
               description: `Rapport PDF complet pour ${city} - ${surface}m²`,
             },
-            unit_amount: 50, // 0.50€ in cents
+            unit_amount: 1499, // 14,99€ in cents
           },
           quantity: 1,
         },
