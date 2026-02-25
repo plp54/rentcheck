@@ -53,7 +53,7 @@ export async function onRequestPost(context: any) {
     .info-box { background: #f1f5f9; padding: 20px; border-radius: 8px; margin: 20px 0; }
     .highlight { background: #fef3c7; padding: 15px; border-radius: 8px; border-left: 4px solid #f59e0b; }
     .legal { background: #dbeafe; padding: 15px; border-radius: 8px; border-left: 4px solid #3b82f6; }
-    .success { background: #d1fae5; padding: 15px; border-radius: 8px; border-left: 4px solid #10b981; }
+    .success { background: #d1fae5; padding: 15px; border-radius: 8px; border-left: 4px solid #34C759; }
     table { width: 100%; border-collapse: collapse; margin: 20px 0; }
     th, td { padding: 12px; text-align: left; border-bottom: 1px solid #e2e8f0; }
     th { background: #f8fafc; font-weight: bold; }
@@ -127,7 +127,7 @@ export async function onRequestPost(context: any) {
   </div>
 
   <div class="footer">
-    <p>Ce rapport a été généré par Loyer Légal.be</p>
+    <p>Ce rapport a été généré par LoyerLegal.be</p>
     <p>Les calculs sont basés sur les données officielles du SPF Finances.</p>
     <p>Ce document est fourni à titre informatif et ne constitue pas un avis juridique.</p>
   </div>

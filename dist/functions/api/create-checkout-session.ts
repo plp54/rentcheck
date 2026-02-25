@@ -26,7 +26,7 @@ export async function onRequestPost(context: any) {
         "line_items[0][price_data][currency]": "eur",
         "line_items[0][price_data][product_data][name]": "Rapport Loyer Légal - Analyse loyer illégal",
         "line_items[0][price_data][product_data][description]": `Rapport PDF complet pour ${city} - ${surface}m²`,
-        "line_items[0][price_data][unit_amount]": "50",
+        "line_items[0][price_data][unit_amount]": "1499",
         "line_items[0][quantity]": "1",
         "mode": "payment",
         "success_url": `${env.NEXT_PUBLIC_URL || "https://loyerlegal.be"}/merci?session_id={CHECKOUT_SESSION_ID}`,
