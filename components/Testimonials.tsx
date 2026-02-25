@@ -5,6 +5,9 @@ import { Quote, Star } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Avatar } from "./illustrations/Avatar";
+
+const avatarColors = ["#007AFF", "#34C759", "#FF9500", "#5856D6", "#FF3B30", "#AF52DE"];
 
 export function Testimonials() {
   return (
@@ -37,7 +40,7 @@ export function Testimonials() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {testimonials.map((testimonial) => (
+          {testimonials.map((testimonial, index) => (
             <div
               key={testimonial.id}
               className="group bg-white rounded-3xl p-8 border border-black/5 hover:shadow-xl hover:shadow-black/5 transition-all duration-500 hover:-translate-y-1"
@@ -55,13 +58,21 @@ export function Testimonials() {
               </p>
               
               <div className="flex items-center justify-between pt-6 border-t border-black/5">
-                <div>
-                  <p className="font-semibold text-[#1D1D1F]">
-                    {testimonial.name}
-                  </p>
-                  <p className="text-sm text-[#86868B]">
-                    {testimonial.location}
-                  </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 rounded-full overflow-hidden">
+                    <Avatar 
+                      name={testimonial.name} 
+                      color={avatarColors[index % avatarColors.length]} 
+                    />
+                  </div>
+                  <div>
+                    <p className="font-semibold text-[#1D1D1F]">
+                      {testimonial.name}
+                    </p>
+                    <p className="text-sm text-[#86868B]">
+                      {testimonial.location}
+                    </p>
+                  </div>
                 </div>
                 <div className="px-4 py-2 bg-[#34C759]/10 text-[#34C759] font-bold rounded-full text-sm">
                   {testimonial.amount}

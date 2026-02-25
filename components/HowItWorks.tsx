@@ -1,8 +1,9 @@
 "use client";
 
-import { Calculator, FileSearch, Award, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Step1Illustration, Step2Illustration, Step3Illustration } from "./illustrations/StepsIllustration";
 
 const steps = [
   {
@@ -10,7 +11,7 @@ const steps = [
     title: "Calculez votre loyer légal",
     description:
       "Entrez les informations de votre logement. Notre algorithme certifié compare instantanément votre loyer au maximum légal.",
-    icon: Calculator,
+    illustration: Step1Illustration,
     time: "30 secondes",
   },
   {
@@ -18,7 +19,7 @@ const steps = [
     title: "Découvrez votre surpaye",
     description:
       "Obtenez le montant exact de votre surpaye mensuelle et annuelle. 35% des locataires découvrent qu'ils paient trop cher.",
-    icon: FileSearch,
+    illustration: Step2Illustration,
     time: "Résultat immédiat",
   },
   {
@@ -26,7 +27,7 @@ const steps = [
     title: "Récupérez votre argent",
     description:
       "Téléchargez votre rapport juridique complet. Vous pouvez réclamer jusqu'à 12 mois de trop-perçu d'un seul coup.",
-    icon: Award,
+    illustration: Step3Illustration,
     time: "Moyenne : 2 160€",
   },
 ];
@@ -57,31 +58,34 @@ export function HowItWorks() {
             >
               {/* Connector line */}
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-16 left-[60%] w-[80%] h-[2px] bg-gradient-to-r from-[#007AFF]/20 to-transparent" />
+                <div className="hidden md:block absolute top-24 left-[60%] w-[80%] h-[2px] bg-gradient-to-r from-[#007AFF]/20 to-transparent" />
               )}
               
-              <div className="relative bg-[#F5F5F7] rounded-3xl p-8 border border-transparent hover:border-[#007AFF]/20 transition-all duration-500 hover:shadow-lg hover:shadow-[#007AFF]/5 hover:-translate-y-1">
-                {/* Step number */}
-                <span className="absolute -top-4 -right-4 text-8xl font-bold text-[#007AFF]/5 select-none">
-                  {step.number}
-                </span>
-                
-                {/* Icon */}
-                <div className="relative w-16 h-16 bg-gradient-to-br from-[#007AFF] to-[#5AC8FA] rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-[#007AFF]/25 group-hover:scale-110 transition-transform duration-500">
-                  <step.icon className="w-8 h-8 text-white" />
+              <div className="relative bg-[#F5F5F7] rounded-3xl overflow-hidden border border-transparent hover:border-[#007AFF]/20 transition-all duration-500 hover:shadow-lg hover:shadow-[#007AFF]/5 hover:-translate-y-1">
+                {/* Illustration */}
+                <div className="h-48 bg-gradient-to-b from-white to-transparent p-6">
+                  <step.illustration />
                 </div>
                 
-                {/* Time badge */}
-                <span className="inline-block px-3 py-1 bg-[#007AFF]/10 text-[#007AFF] text-xs font-semibold rounded-full mb-4">
-                  {step.time}
-                </span>
-                
-                <h3 className="text-xl font-semibold text-[#1D1D1F] mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-[#86868B] leading-relaxed">
-                  {step.description}
-                </p>
+                {/* Content */}
+                <div className="p-8 pt-0">
+                  {/* Step number */}
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-6xl font-bold text-[#007AFF]/10">
+                      {step.number}
+                    </span>
+                    <span className="px-3 py-1 bg-[#007AFF]/10 text-[#007AFF] text-xs font-semibold rounded-full">
+                      {step.time}
+                    </span>
+                  </div>
+                  
+                  <h3 className="text-xl font-semibold text-[#1D1D1F] mb-3">
+                    {step.title}
+                  </h3>
+                  <p className="text-[#86868B] leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
               </div>
             </div>
           ))}

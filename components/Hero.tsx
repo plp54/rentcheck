@@ -4,7 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Calculator, Shield, Clock, ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { stats } from "@/lib/data";
+import { HeroIllustration } from "./illustrations/HeroIllustration";
+import { AvatarStack } from "./illustrations/Avatar";
 
 export function Hero() {
   return (
@@ -101,16 +102,7 @@ export function Hero() {
 
               {/* Preuve sociale premium */}
               <div className="flex items-center justify-center lg:justify-start gap-4 bg-white/60 backdrop-blur-sm rounded-2xl p-4 border border-black/5 animate-fade-in-up delay-500">
-                <div className="flex -space-x-3">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div
-                      key={i}
-                      className="w-10 h-10 rounded-full bg-gradient-to-br from-slate-200 to-slate-300 border-2 border-white flex items-center justify-center text-[#1D1D1F] text-xs font-semibold"
-                    >
-                      {String.fromCharCode(64 + i)}
-                    </div>
-                  ))}
-                </div>
+                <AvatarStack />
                 <div className="text-left">
                   <div className="flex items-center gap-1 text-[#FF9500]">
                     {[...Array(5)].map((_, i) => (
@@ -126,68 +118,45 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Right column - Card premium */}
+            {/* Right column - Hero Illustration */}
             <div className="relative animate-scale-in delay-300">
               <div className="relative">
-                {/* Card glow effect */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-[#007AFF]/20 to-[#5AC8FA]/20 rounded-[32px] blur-xl opacity-60" />
+                {/* Glow effect */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-[#007AFF]/10 to-[#5AC8FA]/10 rounded-[40px] blur-2xl opacity-60" />
                 
-                <div className="relative glass-card p-8">
-                  <div className="flex items-center justify-between mb-8">
-                    <h3 className="text-[#1D1D1F] font-semibold text-lg">Simulation gratuite</h3>
-                    <span className="text-[#007AFF] text-sm font-medium bg-[#007AFF]/10 px-3 py-1 rounded-full">
-                      En 2 min
-                    </span>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <div className="bg-[#F5F5F7] rounded-2xl p-4 flex items-center gap-4 border border-black/5">
-                      <div className="w-12 h-12 bg-[#007AFF]/10 rounded-xl flex items-center justify-center">
-                        <span className="text-[#007AFF] font-bold text-lg">75</span>
-                      </div>
-                      <div>
-                        <p className="text-[#86868B] text-sm">Surface habitable</p>
-                        <p className="text-[#1D1D1F] font-semibold">m²</p>
-                      </div>
+                {/* Illustration */}
+                <div className="relative bg-white/50 backdrop-blur-sm rounded-3xl p-8 border border-white/50 shadow-xl shadow-black/5">
+                  <HeroIllustration />
+                </div>
+                
+                {/* Floating badge */}
+                <div className="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-lg border border-black/5">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 bg-[#34C759]/10 rounded-xl flex items-center justify-center">
+                      <svg className="w-6 h-6 text-[#34C759]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
                     </div>
-                    
-                    <div className="bg-[#F5F5F7] rounded-2xl p-4 flex items-center gap-4 border border-black/5">
-                      <div className="w-12 h-12 bg-[#007AFF]/10 rounded-xl flex items-center justify-center">
-                        <span className="text-[#007AFF] font-bold text-lg">C</span>
-                      </div>
-                      <div>
-                        <p className="text-[#86868B] text-sm">Certificat PEB</p>
-                        <p className="text-[#1D1D1F] font-semibold">Performance énergétique</p>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-[#F5F5F7] rounded-2xl p-4 flex items-center gap-4 border border-black/5">
-                      <div className="w-12 h-12 bg-[#007AFF]/10 rounded-xl flex items-center justify-center">
-                        <span className="text-[#007AFF] font-bold text-lg">8</span>
-                      </div>
-                      <div>
-                        <p className="text-[#86868B] text-sm">Ancienneté</p>
-                        <p className="text-[#1D1D1F] font-semibold">ans</p>
-                      </div>
+                    <div>
+                      <p className="text-[#1D1D1F] font-semibold">2 160€</p>
+                      <p className="text-[#86868B] text-sm">moyenne récupérée</p>
                     </div>
                   </div>
-
-                  <div className="mt-6 p-5 bg-[#FF3B30]/5 rounded-2xl border border-[#FF3B30]/10">
-                    <div className="flex items-center gap-2 mb-2">
-                      <svg className="w-5 h-5 text-[#FF3B30]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                </div>
+                
+                {/* Another floating badge */}
+                <div className="absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-lg border border-black/5">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 bg-[#FF3B30]/10 rounded-xl flex items-center justify-center">
+                      <svg className="w-6 h-6 text-[#FF3B30]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                       </svg>
-                      <p className="text-[#FF3B30] text-sm font-medium">Loyer potentiellement illégal</p>
                     </div>
-                    <p className="text-[#1D1D1F] text-2xl font-bold">985€ max / mois</p>
+                    <div>
+                      <p className="text-[#1D1D1F] font-semibold">35%</p>
+                      <p className="text-[#86868B] text-sm">loyers illégaux</p>
+                    </div>
                   </div>
-
-                  <Link href="/bruxelles">
-                    <Button className="w-full mt-6 py-6 bg-[#1D1D1F] hover:bg-[#000] text-white font-semibold rounded-2xl transition-all h-auto">
-                      Tester mon loyer gratuitement
-                      <ArrowRight className="w-5 h-5 ml-2" />
-                    </Button>
-                  </Link>
                 </div>
               </div>
             </div>
