@@ -6,7 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { HelpCircle, MessageCircle } from "lucide-react";
+import { HelpCircle, MessageCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -71,20 +71,20 @@ export const metadata = {
 
 export default function FAQPage() {
   return (
-    <main className="min-h-screen bg-slate-50">
+    <main className="min-h-screen bg-[#F5F5F7]">
       <NavbarFixed />
 
       <section className="pt-32 pb-12">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 border border-emerald-100 rounded-full mb-6">
-              <HelpCircle className="w-4 h-4 text-emerald-600" />
-              <span className="text-emerald-700 font-medium text-sm">FAQ</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#007AFF]/10 border border-[#007AFF]/20 rounded-full mb-6">
+              <HelpCircle className="w-4 h-4 text-[#007AFF]" />
+              <span className="text-[#007AFF] font-semibold text-sm">FAQ</span>
             </div>
-            <h1 className="text-4xl lg:text-5xl font-black text-slate-900 mb-4">
+            <h1 className="text-4xl lg:text-5xl font-bold text-[#1D1D1F] mb-4 tracking-tight">
               Questions fréquentes
             </h1>
-            <p className="text-xl text-slate-600">
+            <p className="text-xl text-[#86868B]">
               Tout ce que vous devez savoir sur les loyers illégaux en Belgique
             </p>
           </div>
@@ -94,34 +94,41 @@ export default function FAQPage() {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-white rounded-xl px-6 border-none shadow-sm"
+                className="bg-white rounded-2xl px-6 border border-black/5 shadow-sm hover:shadow-md transition-shadow"
               >
-                <AccordionTrigger className="text-left font-semibold text-slate-900 hover:no-underline py-4">
+                <AccordionTrigger className="text-left font-semibold text-[#1D1D1F] hover:no-underline py-5 text-lg">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-slate-600 pb-4 leading-relaxed">
+                <AccordionContent className="text-[#86868B] pb-5 leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
 
-          <div className="mt-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl p-8 text-center text-white">
-            <MessageCircle className="w-12 h-12 mx-auto mb-4 opacity-80" />
-            <h2 className="text-2xl font-bold mb-2">
+          <div className="mt-12 bg-gradient-to-br from-[#007AFF] to-[#5AC8FA] rounded-3xl p-10 text-center text-white">
+            <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <MessageCircle className="w-8 h-8 text-white" />
+            </div>
+            <h2 className="text-2xl font-bold mb-3">
               Vous avez d&apos;autres questions ?
             </h2>
-            <p className="text-emerald-100 mb-6">
-              Notre équipe est là pour vous aider avec votre démarche.
+            <p className="text-white/80 mb-8 max-w-md mx-auto">
+              Notre équipe est là pour vous aider avec votre démarche. Nous répondons sous 24h.
             </p>
-            <Link href="mailto:contact@loyerlegal.be">
-              <Button
-                variant="secondary"
-                className="bg-white text-emerald-600 hover:bg-emerald-50"
-              >
-                Nous contacter
-              </Button>
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="mailto:contact@loyerlegal.be">
+                <Button className="bg-white text-[#007AFF] hover:bg-white/90 font-semibold rounded-full px-8 py-6 h-auto">
+                  Nous contacter
+                </Button>
+              </Link>
+              <Link href="/bruxelles">
+                <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 font-semibold rounded-full px-8 py-6 h-auto">
+                  Tester mon loyer
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

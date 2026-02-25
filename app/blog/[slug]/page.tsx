@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { NavbarFixed } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, Clock, Share2 } from "lucide-react";
+import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import Link from "next/link";
 import { ShareButtons } from "@/components/ShareButtons";
 
@@ -84,19 +84,19 @@ export default async function ArticlePage({
   }
 
   return (
-    <main className="min-h-screen bg-slate-50">
+    <main className="min-h-screen bg-[#F5F5F7]">
       <NavbarFixed />
 
       <article className="pt-32 pb-12">
         <div className="max-w-3xl mx-auto px-6">
           <Link href="/blog">
-            <Button variant="ghost" className="mb-6 -ml-4">
+            <Button variant="ghost" className="mb-6 -ml-4 text-[#86868B] hover:text-[#1D1D1F]">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Retour au blog
             </Button>
           </Link>
 
-          <div className="flex items-center gap-4 text-sm text-slate-500 mb-6">
+          <div className="flex items-center gap-4 text-sm text-[#86868B] mb-6">
             <span className="flex items-center gap-1">
               <Calendar className="w-4 h-4" />
               {article.date}
@@ -107,16 +107,16 @@ export default async function ArticlePage({
             </span>
           </div>
 
-          <h1 className="text-4xl font-black text-slate-900 mb-8">
+          <h1 className="text-4xl font-bold text-[#1D1D1F] mb-8 tracking-tight">
             {article.title}
           </h1>
 
           <div
-            className="prose prose-lg max-w-none prose-headings:text-slate-900 prose-p:text-slate-600 prose-strong:text-slate-900 prose-blockquote:border-l-indigo-500 prose-blockquote:bg-indigo-50 prose-blockquote:py-2 prose-blockquote:px-4 prose-blockquote:rounded-r-lg"
+            className="prose prose-lg max-w-none prose-headings:text-[#1D1D1F] prose-p:text-[#86868B] prose-strong:text-[#1D1D1F] prose-blockquote:border-l-[#007AFF] prose-blockquote:bg-[#007AFF]/5 prose-blockquote:py-4 prose-blockquote:px-6 prose-blockquote:rounded-r-xl prose-li:text-[#86868B]"
             dangerouslySetInnerHTML={{ __html: article.content }}
           />
 
-          <div className="mt-12 pt-8 border-t border-slate-200">
+          <div className="mt-12 pt-8 border-t border-black/10">
             <ShareButtons
               title={article.title}
               text={`J'ai lu cet article sur Loyer Légal : ${article.title}`}

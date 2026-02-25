@@ -9,7 +9,7 @@ export function Navbar() {
 
 export function NavbarFixed() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10 bg-slate-900/80 backdrop-blur-md">
+    <nav className="fixed top-0 left-0 right-0 z-50 glass border-b border-black/5 bg-white/80 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-3 group">
@@ -18,15 +18,15 @@ export function NavbarFixed() {
               alt="Loyer Légal"
               width={36}
               height={36}
-              className="rounded-lg"
+              className="rounded-xl"
             />
-            <span className="font-black text-lg text-white tracking-tight">
-              Loyer<span className="text-emerald-400">Légal</span>.be
+            <span className="font-semibold text-lg text-[#1D1D1F] tracking-tight">
+              Loyer<span className="text-[#007AFF]">Légal</span>.be
             </span>
           </Link>
           <Link
             href="/"
-            className="text-slate-300 hover:text-white font-medium flex items-center gap-2 transition text-sm"
+            className="text-[#86868B] hover:text-[#1D1D1F] font-medium flex items-center gap-2 transition text-sm"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

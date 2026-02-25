@@ -63,20 +63,20 @@ export const metadata = {
 
 export default function BlogPage() {
   return (
-    <main className="min-h-screen bg-slate-50">
+    <main className="min-h-screen bg-[#F5F5F7]">
       <NavbarFixed />
 
       <section className="pt-32 pb-12">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 border border-emerald-100 rounded-full mb-6">
-              <BookOpen className="w-4 h-4 text-emerald-600" />
-              <span className="text-emerald-700 font-medium text-sm">Blog</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#007AFF]/10 border border-[#007AFF]/20 rounded-full mb-6">
+              <BookOpen className="w-4 h-4 text-[#007AFF]" />
+              <span className="text-[#007AFF] font-semibold text-sm">Blog</span>
             </div>
-            <h1 className="text-4xl lg:text-5xl font-black text-slate-900 mb-4">
+            <h1 className="text-4xl lg:text-5xl font-bold text-[#1D1D1F] mb-4 tracking-tight">
               Guides et conseils
             </h1>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            <p className="text-xl text-[#86868B] max-w-2xl mx-auto">
               Tout ce que vous devez savoir sur les loyers illégaux et vos
               droits de locataire en Belgique
             </p>
@@ -85,26 +85,26 @@ export default function BlogPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {articles.map((article) => (
               <Link key={article.slug} href={`/blog/${article.slug}`}>
-                <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer group">
+                <Card className="h-full bg-white border border-black/5 hover:shadow-lg hover:shadow-black/5 transition-all duration-300 cursor-pointer group hover:-translate-y-1">
                   <CardHeader>
                     <div className="flex items-center gap-2 mb-3">
-                      <span className="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-medium rounded-full">
+                      <span className="px-3 py-1 bg-[#007AFF]/10 text-[#007AFF] text-xs font-semibold rounded-full">
                         {article.category}
                       </span>
-                      <span className="flex items-center gap-1 text-xs text-slate-500">
+                      <span className="flex items-center gap-1 text-xs text-[#86868B]">
                         <Clock className="w-3 h-3" />
                         {article.readTime}
                       </span>
                     </div>
-                    <CardTitle className="group-hover:text-emerald-600 transition-colors">
+                    <CardTitle className="group-hover:text-[#007AFF] transition-colors text-[#1D1D1F]">
                       {article.title}
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    <p className="text-[#86868B] text-sm leading-relaxed mb-4">
                       {article.excerpt}
                     </p>
-                    <span className="inline-flex items-center gap-1 text-emerald-600 font-medium text-sm group-hover:gap-2 transition-all">
+                    <span className="inline-flex items-center gap-1 text-[#007AFF] font-medium text-sm group-hover:gap-2 transition-all">
                       Lire l&apos;article
                       <ArrowRight className="w-4 h-4" />
                     </span>
